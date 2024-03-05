@@ -2,7 +2,7 @@
 # General Site Settings
 
 menu:
-- {name: 'Projects', url: ''}
+- {name: 'For_Freedom', url: ''}
 - {name: 'Blog',     url: 'blog'}
 - {name: 'About',    url: 'about'}
 - {name: 'Contact',  url: 'contact'}
@@ -11,22 +11,19 @@ menu:
 # Projects Section
 
 projects:
-- {name: 'Project One',   url: 'proj-1'}
-- {name: 'Project Two',   url: 'proj-2'}
-- {name: 'Project Three', url: 'proj-3'}
-- {name: 'Project Four',  url: 'proj-4'}
-- {name: 'Project Five',  url: 'proj-5'}
+- {name: 'SK8',   url: 'proj-1'}
+- {name: 'trip',   url: 'proj-2'}
+- {name: 'Cats and dogs', url: 'proj-3'}
+- {name: 'Photos',  url: 'proj-4'}
+- {name: 'Food!',  url: 'proj-5'}
 
 #-------------------------------
 # Contact Section
 
 social:
-- {icon: 'twitter',   link: 'https://twitter.com/paululele'}
-- {icon: 'instagram', link: 'https://instagram.com/paululele'}
-- {icon: 'github',    link: 'https://github.com/lenpaul'}
-- {icon: 'linkedin',  link: 'https://linkedin.com/in/lenpaul'}
-- {icon: 'envelope',  link: 'mailto:mailto:l.nguyen.paul@gmail.com'}
-
+- {icon: 'instagram', link: 'https://www.instagram.com/justinliu303/'}
+- {icon: 'github',    link: 'https://github.com/Justin-12138'}
+- {icon: 'linkedin',  link: 'https://www.linkedin.com/in/justin-liu-a2877928a/'}
 # social network icons available: 'twitter' / 'facebook' / 'github' / 'pinterest' 'google-plus' / 'linkedin' / 'youtube' / 'instagram' / 'dribbble' / 'behance' / 'soundcloud' / 'vine'
 
 #-------------------------------
@@ -36,8 +33,8 @@ social:
 
 seo:
   description: 'Personal portfolio powered by Jekyll and GitHub Pages '
-  rel-author: 'https://plus.google.com/u/0/#'
-  rel-publisher: 'https://plus.google.com/u/0/#'
+  rel-author: ''
+  rel-publisher: ''
 
 #-------------------------------
 # Google Analytics Section

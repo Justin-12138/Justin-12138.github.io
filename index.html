@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Liu | AI Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="bg-animation">
+        <div class="grid-lines"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">Justin</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" data-i18n="nav.home">首页</a></li>
+                <li><a href="blog.html" data-i18n="nav.blog">博客</a></li>
+                <li><a href="cv.html" data-i18n="nav.cv">简历</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="lang-zh">中</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-en">EN</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- Hero 区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting" data-i18n="hero.greeting">你好，我是</p>
+                    <h1 class="hero-name">
+                        <span class="name-highlight">Justin Liu</span>
+                        <span class="cursor-blink">_</span>
+                    </h1>
+                    <div class="hero-title-wrapper">
+                        <span class="hero-title" data-i18n="hero.title">算法工程师 / AI 研究者</span>
+                    </div>
+                    <p class="hero-description" data-i18n="hero.description">
+                        专注于大语言模型推理优化、多智能体系统与因果推断研究。
+                        热爱探索 AI 前沿技术，致力于将复杂的算法转化为实际应用。
+                    </p>
+                    <div class="hero-cta">
+                        <a href="cv.html" class="btn btn-primary" data-i18n="hero.viewCV">查看简历</a>
+                        <a href="blog.html" class="btn btn-secondary" data-i18n="hero.readBlog">阅读博客</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="code-title">about.py</span>
+                        </div>
+                        <pre class="code-content"><code><span class="keyword">class</span> <span class="class-name">JustinLiu</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="param">self</span>):
+        <span class="param">self</span>.name = <span class="string">"Justin Liu"</span>
+        <span class="param">self</span>.role = <span class="string">"AI Engineer"</span>
+        <span class="param">self</span>.location = <span class="string">"Guangzhou, China"</span>
+        <span class="param">self</span>.skills = [
+            <span class="string">"LLM Inference"</span>,
+            <span class="string">"Multi-Agent Systems"</span>,
+            <span class="string">"Machine Learning"</span>,
+            <span class="string">"Python"</span>
+        ]
+    
+    <span class="keyword">def</span> <span class="function">say_hi</span>(<span class="param">self</span>):
+        <span class="keyword">return</span> <span class="string">"Welcome to my site!"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能区域 -->
+        <section class="skills-section">
+            <h2 class="section-title" data-i18n="skills.title">技术栈</h2>
+            <div class="skills-grid">
+                <div class="skill-card" style="--delay: 0.1s">
+                    <div class="skill-icon">🤖</div>
+                    <h3 data-i18n="skills.llm">LLM 推理</h3>
+                    <p data-i18n="skills.llmDesc">vLLM, SGLang, LMDeploy, TensorRT-LLM</p>
+                </div>
+                <div class="skill-card" style="--delay: 0.2s">
+                    <div class="skill-icon">🧠</div>
+                    <h3 data-i18n="skills.ml">机器学习</h3>
+                    <p data-i18n="skills.mlDesc">PyTorch, Transformers, DeepSpeed</p>
+                </div>
+                <div class="skill-card" style="--delay: 0.3s">
+                    <div class="skill-icon">🔗</div>
+                    <h3 data-i18n="skills.mas">多智能体</h3>
+                    <p data-i18n="skills.masDesc">LangGraph, AutoGen, Google ADK</p>
+                </div>
+                <div class="skill-card" style="--delay: 0.4s">
+                    <div class="skill-icon">📊</div>
+                    <h3 data-i18n="skills.data">数据分析</h3>
+                    <p data-i18n="skills.dataDesc">Python, R, 因果推断</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选项目 -->
+        <section class="projects-section">
+            <h2 class="section-title" data-i18n="projects.title">精选项目</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag" data-i18n="projects.research">研究</span>
+                        <span class="project-date">2023 - 2024</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.ci.title">因果推断在阿尔兹海默症生物标志物的挖掘</h3>
+                    <p class="project-desc" data-i18n="projects.ci.desc">
+                        基于因果推断的特征选择方法，用于识别阿尔兹海默症生物标志物。论文已发表于 ICAI 2024。
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Justin-12138/CI.bio" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="https://link.springer.com/chapter/10.1007/978-981-96-1907-8_10" target="_blank" class="project-link">
+                            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6z"/></svg>
+                            <span data-i18n="projects.paper">论文</span>
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag" data-i18n="projects.work">工作</span>
+                        <span class="project-date">2024 - 2025</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.rag.title">基于文章树的 RAG 精度调优</h3>
+                    <p class="project-desc" data-i18n="projects.rag.desc">
+                        创新性地将文章解构成树结构，实现基于文章树的检索，相比传统 RAG 方案能更高效准确地召回相关内容。
+                    </p>
+                    <div class="project-links">
+                        <span class="project-status" data-i18n="projects.internal">内部项目</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section class="contact-section">
+            <h2 class="section-title" data-i18n="contact.title">联系我</h2>
+            <div class="contact-links">
+                <a href="mailto:justinliu707@gmail.com" class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <span>justinliu707@gmail.com</span>
+                </a>
+                <a href="https://github.com/Justin-12138" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </div>
+                    <span>Justin-12138</span>
+                </a>
+                <a href="https://www.linkedin.com/in/justinliu12138/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Justin Liu. <span data-i18n="footer.rights">保留所有权利</span></p>
+            <p class="footer-tech" data-i18n="footer.tech">使用 HTML, CSS & JavaScript 构建</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

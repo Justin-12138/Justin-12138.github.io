@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历 | Justin Liu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景动画 -->
+    <div class="bg-animation">
+        <div class="grid-lines"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">Justin</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+                <li><a href="blog.html" data-i18n="nav.blog">博客</a></li>
+                <li><a href="cv.html" class="active" data-i18n="nav.cv">简历</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+                <button class="lang-toggle" id="langToggle">
+                    <span class="lang-zh">中</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-en">EN</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 页面头部 -->
+        <header class="page-header">
+            <h1 class="page-title" data-i18n="cv.title">个人简历</h1>
+            <p class="page-subtitle" data-i18n="cv.subtitle">我的教育背景与工作经历</p>
+        </header>
+
+        <!-- 简历内容 -->
+        <div class="cv-container">
+            <!-- 语言切换标签 -->
+            <div class="cv-tabs">
+                <button class="cv-tab active" data-lang="zh" data-i18n="cv.tab.zh">中文</button>
+                <button class="cv-tab" data-lang="en" data-i18n="cv.tab.en">English</button>
+            </div>
+
+            <!-- 中文简历 -->
+            <div class="cv-content active" data-lang="zh">
+                <!-- 教育经历 -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">📚 教育经历</h2>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">桂林电子科技大学</h3>
+                                <p class="cv-item-subtitle">机器人工程 · 本科 · 人工智能学院</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 桂林</div>
+                                <div>📅 2021.09 - 2025.07</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>"三好"学生 (2021, 2022)，人工智能学院三等奖学金</li>
+                                <li>广西高校大学生翻译大赛 C组三等奖，全国数学建模大赛广西二等奖</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 工作经历 -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">💼 工作经历</h2>
+                    
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">软通智算科技（广东）集团有限公司</h3>
+                                <p class="cv-item-subtitle">算法工程师 · 算法组</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 广州</div>
+                                <div>📅 2024.09 - 至今</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <p><strong>AI Infra</strong> - 深入调研测试主流 LLM 推理框架（vLLM、SGLang、LMDeploy），熟悉 KV Cache 复用、显存占用计算，熟悉各种分布式推理策略（DP/TP/PP/EP）；利用 lmcache、dynamo 等组件优化 KV Cache，提升系统吞吐量</p>
+                            <p><strong>训练平台开发</strong> - 基于 LlamaFactory 进行二次开发，封装跨容器数据并行 API，降低配置复杂度</p>
+                            <p><strong>多智能体系统</strong> - 使用 LangGraph、AutoGen、ADK 实现 MAS 讨论组，结合 Nano-Banana-pro 生成产品图</p>
+                        </div>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">杭州拓端数据科技有限公司</h3>
+                                <p class="cv-item-subtitle">数据分析师 · 开发组</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 线上（上海）</div>
+                                <div>📅 2022.12 - 2023.04</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>完成文本规则挖掘、Poisson 回归分析等数据处理工作</li>
+                                <li>复现文献算法并应用于金融、环境、疾病等多领域场景</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 项目经历 -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">🚀 项目经历</h2>
+                    
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">因果推断在阿尔兹海默症生物标志物的挖掘</h3>
+                                <p class="cv-item-subtitle">负责人 · 人工智能学院</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 桂林</div>
+                                <div>📅 2023.09 - 2024.09</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>从 GEO 数据库获取数据，使用特征选择算法（MRMR、CFS、CI）进行提取分析</li>
+                                <li>第一作者发表论文：<a href="https://link.springer.com/chapter/10.1007/978-981-96-1907-8_10" target="_blank" style="color: var(--accent-primary);">ICAI 2024</a> | <a href="https://github.com/Justin-12138/CI.bio" target="_blank" style="color: var(--accent-primary);">GitHub</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">基于文章的 RAG 精度调优</h3>
+                                <p class="cv-item-subtitle">LLM 开发 · 算法组</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 广州</div>
+                                <div>📅 2024.11 - 2025.03</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>将文章解构成树结构，实现基于文章树的检索，相比传统 RAG 更高效准确</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 技能 -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">🛠️ 技能</h2>
+                    <div class="cv-skills">
+                        <span class="cv-skill-tag">Machine Learning</span>
+                        <span class="cv-skill-tag">Python</span>
+                        <span class="cv-skill-tag">Hugging Face</span>
+                        <span class="cv-skill-tag">Transformers</span>
+                        <span class="cv-skill-tag">DeepSpeed</span>
+                        <span class="cv-skill-tag">vLLM</span>
+                        <span class="cv-skill-tag">LangGraph</span>
+                        <span class="cv-skill-tag">AutoGen</span>
+                        <span class="cv-skill-tag">R</span>
+                        <span class="cv-skill-tag">Linux</span>
+                    </div>
+                </section>
+
+                <!-- 其他 -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">📋 其他</h2>
+                    <div class="cv-item">
+                        <div class="cv-item-content">
+                            <p><strong>语言：</strong>英语（CET-6） · <strong>证书：</strong>驾驶证 · <strong>兴趣：</strong>滑板、跑步</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 英文简历 -->
+            <div class="cv-content" data-lang="en">
+                <!-- Education -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">📚 Education</h2>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Guilin University of Electronic Technology</h3>
+                                <p class="cv-item-subtitle">B.E. in Artificial Intelligence</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 Guilin, China</div>
+                                <div>📅 2021 - 2025</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>Excellent Students Award (2021, 2022) - Rank 2/20, AI College Scholarship</li>
+                                <li>Translation Competition Third Prize (Rank 100/5000)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Work Experience -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">💼 Work Experience</h2>
+                    
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Isoftstone</h3>
+                                <p class="cv-item-subtitle">LLM Development Engineer</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 Guangzhou</div>
+                                <div>📅 2024.09 - Present</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>R&D of LLM serving frameworks: vLLM, Ray, SGLang, LMDeploy, TensorRT-LLM</li>
+                                <li>LLM fine-tuning with LlamaFactory, multi-agent systems with AutoGen & Google ADK</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Tecdata</h3>
+                                <p class="cv-item-subtitle">Data Analyst Intern</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 Shanghai (Remote)</div>
+                                <div>📅 2022.12 - 2023.03</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>Data preprocessing, model design, algorithm implementation across multiple domains</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Research -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">🔬 Research & Projects</h2>
+                    
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Causal Inference for AD Biomarker Discovery</h3>
+                                <p class="cv-item-subtitle">Project Lead · Lan's Lab</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 GUET</div>
+                                <div>📅 2023.06 - 2024.06</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>Led feature selection project, published at ICAI 2024</li>
+                                <li>First-author: "Causal Inference-Based Feature Selection Method for Identifying Alzheimer's Disease Biomarker"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div>
+                                <h3 class="cv-item-title">Brain Slice Classification (CV Course)</h3>
+                                <p class="cv-item-subtitle">Project Lead</p>
+                            </div>
+                            <div class="cv-item-meta">
+                                <div>📍 GUET</div>
+                                <div>📅 2023.12 - 2024.05</div>
+                            </div>
+                        </div>
+                        <div class="cv-item-content">
+                            <ul>
+                                <li>AD brain slice classification based on convolutional neural network</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">🛠️ Skills</h2>
+                    <div class="cv-skills">
+                        <span class="cv-skill-tag">Machine Learning (2+ yrs)</span>
+                        <span class="cv-skill-tag">Python (3+ yrs)</span>
+                        <span class="cv-skill-tag">Linux (2+ yrs)</span>
+                        <span class="cv-skill-tag">Hugging Face</span>
+                        <span class="cv-skill-tag">Transformers</span>
+                        <span class="cv-skill-tag">DeepSpeed</span>
+                        <span class="cv-skill-tag">vLLM</span>
+                        <span class="cv-skill-tag">LangGraph</span>
+                        <span class="cv-skill-tag">AutoGen</span>
+                    </div>
+                </section>
+
+                <!-- Service -->
+                <section class="cv-section">
+                    <h2 class="cv-section-title">🎤 Service & Publications</h2>
+                    <div class="cv-item">
+                        <div class="cv-item-content">
+                            <p><strong>2024 ICAI Reporter</strong> - Presented: Causal Inference-Based Feature Selection Method</p>
+                            <p style="margin-top: 8px;"><a href="https://link.springer.com/chapter/10.1007/978-981-96-1907-8_10" target="_blank" style="color: var(--accent-primary);">View Publication →</a></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 下载按钮 -->
+            <div class="cv-download">
+                <a href="cvs/cv-zh.md" download class="btn btn-primary" data-i18n="cv.download">下载 PDF</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 Justin Liu. <span data-i18n="footer.rights">保留所有权利</span></p>
+            <p class="footer-tech" data-i18n="footer.tech">使用 HTML, CSS & JavaScript 构建</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

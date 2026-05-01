@@ -1,0 +1,28 @@
+{
+    "categories": {
+      "tech": {
+        "name": "技术",
+        "name_en": "Tech",
+        "icon": "💻"
+      },
+      "life": {
+        "name": "生活",
+        "name_en": "Life",
+        "icon": "🌟"
+      }
+    },
+    "posts": [
+      {
+        "id": "skateboard-journey",
+        "title": "我的滑板之旅：从零开始的街头冒险",
+        "title_en": "My Skateboard Journey: Street Adventure from Zero",
+        "date": "2024-10-08",
+        "category": "滑板",
+        "group": "life",
+        "summary": "记录我学习滑板的心路历程，从第一次站上板到学会第一个 Ollie，分享一些新手入门的经验。",
+        "summary_en": "Recording my skateboarding journey, from standing on the board for the first time to landing my first Ollie.",
+        "file": "skateboard-journey.md"
+      }
+    ]
+  }
+  

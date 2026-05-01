@@ -1,0 +1,60 @@
+{
+  "categories": {
+    "tech": {
+      "name": "技术",
+      "name_en": "Tech",
+      "icon": "💻"
+    },
+    "life": {
+      "name": "生活",
+      "name_en": "Life",
+      "icon": "🌟"
+    }
+  },
+  "posts": [
+    {
+      "id": "LLM-Output-Consistency",
+      "title": "LLM-输出一致性",
+      "title_en": "LLM-Output Consistency",
+      "date": "2025-12-20",
+      "category": "AI-infra",
+      "group": "tech",
+      "summary": "记录LLM的输出一致性",
+      "summary_en": "Recording the output consistency of LLM.",
+      "file": "LLM_输出一致性.md"
+    },
+    {
+      "id": "UV-quick-start",
+      "title": "UV-quick-start",
+      "title_en": "UV-quick-start",
+      "date": "2025-12-27",
+      "category": "tools",
+      "group": "tech",
+      "summary": "UV-quick-start",
+      "summary_en": "UV-quick-start",
+      "file": "UV_quick_start.md"
+    },
+    {
+      "id": "nvidia-gpu",
+      "title": "NvidiaGPU-学习笔记",
+      "title_en": "Nvidia GPU Learning Notes",
+      "date": "2026-01-04",
+      "category": "AI-infra",
+      "group": "tech",
+      "summary": "Nvidia GPU架构、参数解读、卡间通信等学习笔记",
+      "summary_en": "Learning notes on Nvidia GPU architecture, parameters, and inter-GPU communication",
+      "file": "Nvidia_GPU.md"
+    },
+    {
+      "id": "kv-cache",
+      "title": "KV Cache 原理与量化详解",
+      "title_en": "KV Cache Principles and Quantization",
+      "date": "2026-05-02",
+      "category": "AI-infra",
+      "group": "tech",
+      "summary": "深入剖析 KV Cache 工作原理、大小计算公式、以及量化技术对内存和速度的影响",
+      "summary_en": "Deep dive into KV Cache principles, size calculation, and quantization effects on memory and speed",
+      "file": "KV_Cache_原理与量化详解.md"
+    }
+  ]
+}

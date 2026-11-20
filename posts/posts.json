@@ -55,6 +55,17 @@
       "summary": "深入剖析 KV Cache 工作原理、大小计算公式、以及量化技术对内存和速度的影响",
       "summary_en": "Deep dive into KV Cache principles, size calculation, and quantization effects on memory and speed",
       "file": "KV_Cache_原理与量化详解.md"
+    },
+    {
+      "id": "rag_sucks",
+      "title": "Why RAG sucks?",
+      "title_en": "Why RAG sucks?",
+      "date": "2026-06-30",
+      "category": "RAG",
+      "group": "tech",
+      "summary": "深入剖析 RAG 原理",
+      "summary_en": "Deep dive into RAG theory",
+      "file": "Why_Rag_Sucks.md"
     }
   ]
 }

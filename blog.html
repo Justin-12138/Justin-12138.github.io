@@ -1,98 +1,154 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>博客 | Justin Liu</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Notes — Justin Liu</title>
+    <meta name="description" content="Working notes by Justin Liu on LLM inference, retrieval, document intelligence and learning in public.">
+    <meta name="theme-color" content="#f2ecdf" id="themeColor">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('jl-theme') || localStorage.getItem('theme');
+                var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    var meta = document.querySelector('meta[name="theme-color"]');
+                    if (meta) meta.setAttribute('content', '#16120e');
+                }
+            } catch (error) { /* theme is optional */ }
+            document.documentElement.classList.add('js');
+            window.setTimeout(function () {
+                if (!window.__jlReady) document.documentElement.classList.remove('js');
+            }, 3000);
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&amp;family=Noto+Sans+SC:wght@400;500&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- 背景动画 -->
-    <div class="bg-animation">
-        <div class="grid-lines"></div>
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+<body id="top" class="page page--blog">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="topline">
+        <div class="topline__inner">
+            <span>Field Notes — Index</span>
+            <span class="topline__mid">AI Engineer · Guangzhou, China</span>
+            <span class="topline__time">Local <time id="localTime">--:--</time> / GMT+8</span>
         </div>
     </div>
 
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-bracket">{</span>
-                <span class="logo-text">Justin</span>
-                <span class="logo-bracket">}</span>
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="wordmark" href="index.html" aria-label="Justin Liu, home">
+                <span class="wordmark__name">Justin Liu</span>
+                <span class="wordmark__tag">A personal notebook</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="index.html" data-i18n="nav.home">首页</a></li>
-                <li><a href="blog.html" class="active" data-i18n="nav.blog">博客</a></li>
-                <li><a href="cv.html" data-i18n="nav.cv">简历</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-                    <span class="icon-sun">☀️</span>
-                    <span class="icon-moon">🌙</span>
+
+            <nav class="site-nav" id="siteNav" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="blog.html" aria-current="page">Notes</a>
+                <a href="life.html">Life</a>
+                <a href="now.html">Now</a>
+                <a href="cv.html">CV</a>
+            </nav>
+
+            <div class="masthead__actions">
+                <a class="masthead__link" href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night edition" aria-pressed="false">
+                    <span class="theme-toggle__dot" aria-hidden="true"></span>
+                    <span data-theme-label>Night</span>
                 </button>
-                <button class="lang-toggle" id="langToggle">
-                    <span class="lang-zh">中</span>
-                    <span class="lang-divider">/</span>
-                    <span class="lang-en">EN</span>
-                </button>
-                <button class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+                    <span class="menu-toggle__label" data-menu-label>Menu</span>
                 </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- 主要内容 -->
-    <main class="main-content">
-        <!-- 页面头部 -->
-        <header class="page-header">
-            <h1 class="page-title" data-i18n="blog.title">博客</h1>
-            <p class="page-subtitle" data-i18n="blog.subtitle">分享技术见解与学习心得</p>
-        </header>
-
-        <!-- 分类筛选 -->
-        <div class="blog-container">
-            <div class="blog-filters">
-                <button class="filter-btn active" data-filter="all">
-                    <span class="filter-icon">📚</span>
-                    <span class="filter-text" data-i18n="blog.filter.all">全部</span>
-                </button>
-                <button class="filter-btn" data-filter="tech">
-                    <span class="filter-icon">💻</span>
-                    <span class="filter-text" data-i18n="blog.filter.tech">技术</span>
-                </button>
-                <button class="filter-btn" data-filter="life">
-                    <span class="filter-icon">🌟</span>
-                    <span class="filter-text" data-i18n="blog.filter.life">生活</span>
-                </button>
-            </div>
-
-            <!-- 博客列表 -->
-            <div class="blog-list">
-                <!-- 博客文章将通过 JavaScript 动态加载 -->
-                <div class="blog-empty">
-                    <div class="blog-empty-icon">⏳</div>
-                    <h3>加载中...</h3>
+    <main id="main">
+        <header class="page-hero">
+            <div class="wrap page-hero__inner">
+                <div>
+                    <p class="kicker">The notebook — <span id="archiveCount">working notes</span></p>
+                    <h1 class="page-hero__title">Notes from<br><em>the workbench.</em></h1>
+                </div>
+                <div class="page-hero__aside">
+                    <p class="page-hero__deck">Retrieval, serving, and whatever I'm learning the hard way. Written for my future self, mostly.</p>
+                    <p class="meta-line">Markdown files. Browser-rendered. No CMS.</p>
                 </div>
             </div>
-        </div>
+        </header>
+
+        <section class="journal" aria-label="Notes archive">
+            <div class="wrap journal-grid">
+                <aside class="journal__rail">
+                    <div class="search">
+                        <label class="kicker kicker--plain" for="searchInput">Search the archive</label>
+                        <input id="searchInput" type="search" placeholder="Title, topic, keyword…" autocomplete="off" spellcheck="false">
+                    </div>
+
+                    <div class="filters">
+                        <p class="kicker kicker--plain">Filed under</p>
+                        <div class="filter-list" id="categoryFilters" role="group" aria-label="Filter notes by category">
+                            <button class="filter-btn is-active" data-category="all" type="button" aria-pressed="true">
+                                <span>All notes</span>
+                                <span class="filter-count" data-count>—</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="rail-note">Notes live in <code>posts/</code> as Markdown. This index is generated from <code>posts.json</code>.</p>
+                </aside>
+
+                <div class="journal__main">
+                    <div class="journal__status">
+                        <span id="resultCount" aria-live="polite">Loading…</span>
+                        <span id="resultLabel">All notes</span>
+                    </div>
+                    <div class="entry-list" id="journalList">
+                        <p class="loading-line">Loading the archive…</p>
+                    </div>
+                    <noscript><p class="loading-line">The archive is rendered by JavaScript. The Markdown notes are available in <code>posts/</code>.</p></noscript>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- 页脚 -->
     <footer class="footer">
-        <div class="footer-content">
-            <p>© 2025 Justin Liu. <span data-i18n="footer.rights">保留所有权利</span></p>
-            <p class="footer-tech" data-i18n="footer.tech">使用 HTML, CSS & JavaScript 构建</p>
+        <div class="wrap footer__top">
+            <div class="footer__id">
+                <p class="kicker">Colophon</p>
+                <p>Field Notes is a personal site by Justin Liu. Set in Fraunces, Newsreader, Instrument Sans and IBM Plex Mono. Built by hand with HTML, CSS and vanilla JavaScript. No frameworks.</p>
+            </div>
+            <div class="footer__elsewhere">
+                <p class="kicker">This site</p>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Notes</a></li>
+                    <li><a href="life.html">Life</a></li>
+                    <li><a href="now.html">Now</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <p class="kicker">Elsewhere</p>
+                <ul class="footer__external">
+                    <li><a href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub ↗</a></li>
+                    <li><a href="https://www.linkedin.com/in/justinliu12138/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                </ul>
+                <a class="footer__email" href="mailto:justinliu707@gmail.com">justinliu707@gmail.com</a>
+                <p>Guangzhou, China · 23°N</p>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span id="year">2026</span> Justin Liu</span>
+            <span>Field Notes · Guangzhou, China</span>
+            <a href="#top">Back to top ↑</a>
         </div>
     </footer>
 

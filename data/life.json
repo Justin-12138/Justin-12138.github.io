@@ -1,0 +1,26 @@
+{
+  "updated": "2026-11-21",
+  "log": [
+    {
+      "date": null,
+      "tag": "Skate",
+      "status": "In progress",
+      "title": "Kickflip, still pending",
+      "body": "Both are still in the practice phase. The Kickflip will arrive on its own schedule. In the meantime, repetition is the whole method."
+    },
+    {
+      "date": null,
+      "tag": "English",
+      "status": "Ongoing",
+      "title": "Say it again, slower",
+      "body": "Reading documentation is comfortable. Saying the same thought out loud, without rehearsing it first, is the part that still needs work. So I practice saying it badly and then saying it again."
+    },
+    {
+      "date": null,
+      "tag": "This page",
+      "status": "Just started",
+      "title": "A log, not a feed",
+      "body": "No daily posting, no scores, no quantified self. Just short entries when there is something worth keeping — a trick, a trip, a sentence that finally came out right."
+    }
+  ]
+}

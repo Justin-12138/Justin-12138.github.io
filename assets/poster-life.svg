@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Abstract landscape poster in dusty blue, cream and rust</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.14"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#171411"/>
+    </pattern>
+    <clipPath id="sun">
+      <circle cx="922" cy="254" r="148"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="800" fill="#44585b"/>
+  <rect x="30" y="30" width="1140" height="740" fill="none" stroke="#e9e0cf" stroke-width="1.5"/>
+
+  <circle cx="922" cy="254" r="148" fill="#c76743"/>
+  <g clip-path="url(#sun)" opacity=".45">
+    <rect x="760" y="90" width="340" height="340" fill="url(#dots)"/>
+  </g>
+
+  <path d="M30 538 Q 260 420 490 538 T 950 538 T 1170 538 V 770 H 30 Z" fill="#e9e0cf"/>
+  <path d="M30 616 Q 300 500 570 616 T 1170 616 V 770 H 30 Z" fill="#171411"/>
+  <path d="M30 700 Q 330 590 650 700 T 1170 700 V 770 H 30 Z" fill="#b54327" opacity=".9"/>
+
+  <text x="76" y="110" fill="#e9e0cf" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="15" letter-spacing="3">FIELD NOTES / 04</text>
+  <text x="1124" y="110" fill="#e9e0cf" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="15" letter-spacing="3" text-anchor="end">LIFE</text>
+
+  <text x="76" y="248" fill="#e9e0cf" font-family="Georgia, 'Times New Roman', serif" font-size="94" font-weight="700" letter-spacing="-4">SOMEWHERE</text>
+  <text x="76" y="334" fill="#c9a227" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic" letter-spacing="-2">worth remembering.</text>
+
+  <g fill="#e9e0cf">
+    <circle cx="330" cy="176" r="3"/>
+    <circle cx="390" cy="224" r="2"/>
+    <circle cx="286" cy="267" r="2.4"/>
+    <circle cx="620" cy="150" r="2"/>
+    <circle cx="704" cy="214" r="3"/>
+  </g>
+
+  <text x="1124" y="714" fill="#e9e0cf" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="13" letter-spacing="3" text-anchor="end">23°N / SAVE THE ORDINARY DAYS</text>
+
+  <rect width="1200" height="800" filter="url(#grain)" opacity=".5"/>
+</svg>

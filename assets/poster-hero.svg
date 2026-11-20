@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title">
+  <title id="title">Abstract screen-print poster in paper, black and rust</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.13"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="halftone" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#171411"/>
+    </pattern>
+    <clipPath id="sun">
+      <circle cx="560" cy="300" r="210"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="#e9e0cf"/>
+  <rect x="30" y="30" width="740" height="940" fill="none" stroke="#171411" stroke-width="1.5"/>
+
+  <circle cx="560" cy="300" r="210" fill="#b54327"/>
+  <g clip-path="url(#sun)" opacity=".55">
+    <rect x="340" y="80" width="440" height="440" fill="url(#halftone)"/>
+  </g>
+
+  <rect x="76" y="148" width="292" height="14" fill="#171411"/>
+  <rect x="76" y="178" width="216" height="14" fill="#171411"/>
+
+  <path d="M76 592 Q 400 372 724 592" fill="none" stroke="#171411" stroke-width="2"/>
+  <path d="M76 626 Q 400 406 724 626" fill="none" stroke="#171411" stroke-width="1" opacity=".45"/>
+  <path d="M76 660 Q 400 440 724 660" fill="none" stroke="#171411" stroke-width="1" opacity=".22"/>
+
+  <text x="76" y="110" fill="#171411" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="14" letter-spacing="3">JUSTIN LIU / FIELD NOTES</text>
+  <text x="724" y="110" fill="#171411" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="14" letter-spacing="3" text-anchor="end">NO. 01</text>
+
+  <text x="68" y="540" fill="#171411" font-family="Georgia, 'Times New Roman', serif" font-size="156" font-weight="700" letter-spacing="-7">BUILD</text>
+  <text x="74" y="678" fill="#b54327" font-family="Georgia, 'Times New Roman', serif" font-size="124" font-style="italic" letter-spacing="-4">things.</text>
+
+  <line x1="76" y1="806" x2="724" y2="806" stroke="#171411" stroke-width="1"/>
+  <text x="76" y="842" fill="#171411" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="13" letter-spacing="2.4">AI ENGINEER — GUANGZHOU, CN</text>
+  <text x="76" y="872" fill="#171411" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="13" letter-spacing="2.4">23°N / GMT+8</text>
+  <text x="724" y="872" fill="#171411" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="13" letter-spacing="2.4" text-anchor="end">FIG. 01</text>
+
+  <text transform="translate(754 480) rotate(90)" fill="#171411" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="11" letter-spacing="4">ENGINEER / LEARNER / HUMAN</text>
+
+  <g stroke="#171411" stroke-width="1">
+    <line x1="724" y1="148" x2="738" y2="148"/>
+    <line x1="731" y1="141" x2="731" y2="155"/>
+    <line x1="76" y1="730" x2="90" y2="730"/>
+    <line x1="83" y1="723" x2="83" y2="737"/>
+  </g>
+
+  <rect width="800" height="1000" filter="url(#grain)" opacity=".55"/>
+</svg>

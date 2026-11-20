@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Justin Liu</title>
+    <meta name="description" content="Selected projects by Justin Liu: LLM serving, document-tree retrieval, causal inference, multi-agent systems and computer vision.">
+    <meta name="theme-color" content="#f2ecdf" id="themeColor">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('jl-theme') || localStorage.getItem('theme');
+                var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    var meta = document.querySelector('meta[name="theme-color"]');
+                    if (meta) meta.setAttribute('content', '#16120e');
+                }
+            } catch (error) { /* theme is optional */ }
+            document.documentElement.classList.add('js');
+            window.setTimeout(function () {
+                if (!window.__jlReady) document.documentElement.classList.remove('js');
+            }, 3000);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&amp;family=Noto+Sans+SC:wght@400;500&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top" class="page page--projects">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="topline">
+        <div class="topline__inner">
+            <span>Field Notes — Projects</span>
+            <span class="topline__mid">AI Engineer · Guangzhou, China</span>
+            <span class="topline__time">Local <time id="localTime">--:--</time> / GMT+8</span>
+        </div>
+    </div>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="wordmark" href="index.html" aria-label="Justin Liu, home">
+                <span class="wordmark__name">Justin Liu</span>
+                <span class="wordmark__tag">A personal notebook</span>
+            </a>
+
+            <nav class="site-nav" id="siteNav" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="projects.html" aria-current="page">Projects</a>
+                <a href="blog.html">Notes</a>
+                <a href="life.html">Life</a>
+                <a href="now.html">Now</a>
+                <a href="cv.html">CV</a>
+            </nav>
+
+            <div class="masthead__actions">
+                <a class="masthead__link" href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night edition" aria-pressed="false">
+                    <span class="theme-toggle__dot" aria-hidden="true"></span>
+                    <span data-theme-label>Night</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+                    <span class="menu-toggle__label" data-menu-label>Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Project records are hand-written. Keep claims traceable to cv.html, a public note or a public repo. -->
+        <header class="page-hero">
+            <div class="wrap page-hero__inner">
+                <div>
+                    <p class="kicker">Projects — selected work</p>
+                    <h1 class="page-hero__title">Things I've built.<br><em>And what broke.</em></h1>
+                </div>
+                <div class="page-hero__aside">
+                    <p class="page-hero__deck">Internal systems, research and coursework. What I can point to — with the constraints and the unresolved bits left in.</p>
+                    <p class="meta-line">Five records · one public paper<br>No metrics I can't stand behind</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="projects" aria-label="Project records">
+            <div class="wrap">
+                <div class="projects-note reveal">
+                    <p class="kicker">A note on this page</p>
+                    <p>Much of my recent work lives inside internal systems, so there are no repository links for everything here. Where there is a public link, I've included it. Where there isn't, I've said so instead of inventing one.</p>
+                </div>
+
+                <div class="project-list">
+                    <article class="project reveal" id="document-tree">
+                        <div class="project__rail">
+                            <span class="project__num" aria-hidden="true">01</span>
+                            <span class="project__status">Internal</span>
+                            <span class="project__years">2024 — 2025</span>
+                        </div>
+                        <div class="project__body">
+                            <p class="kicker">Document intelligence / RAG</p>
+                            <h2>Article-tree retrieval for document QA</h2>
+                            <p class="project__deck">Long annual reports were being flattened into fixed chunks and losing the structure that made them answerable. I rebuilt retrieval around the document's title hierarchy.</p>
+
+                            <dl class="project__facts">
+                                <div>
+                                    <dt>Context</dt>
+                                    <dd>LLM development, algorithm team. The test set was a group of AIA annual reports from 2022–2025, roughly 76–99 pages each.</dd>
+                                </div>
+                                <div>
+                                    <dt>Problem</dt>
+                                    <dd>Fixed-chunk RAG returned text that was topical but not sufficient: the right year, table header or footnote often sat in a different chunk. Similarity to the query was a poor proxy for evidence.</dd>
+                                </div>
+                                <div>
+                                    <dt>Approach</dt>
+                                    <dd>Two companion prototypes: <code>ragdetail</code> compared dense, BM25 + dense hybrid, and hybrid + rerank on page-level retrieval; <code>optpgi</code> converted PDFs to Markdown with a VLM, built a title tree, and retrieved over document and page summaries before loading only the needed body text.</dd>
+                                </div>
+                                <div>
+                                    <dt>What was hard</dt>
+                                    <dd>Cascade failures. A document-level prompt that preferred the latest report could discard the older document holding half the evidence before page selection ever ran. Page lists for a single report also consumed roughly 22–29k tokens, so "just send the tree" did not scale.</dd>
+                                </div>
+                                <div>
+                                    <dt>Outcome</dt>
+                                    <dd>Article-tree retrieval was more accurate than fixed-chunk retrieval on the internal evaluation, and the architecture became the basis of the public write-up below. No numbers are published, so none are claimed here.</dd>
+                                </div>
+                            </dl>
+
+                            <div class="project__links">
+                                <a class="arrow-link" href="post.html?id=rag_sucks">Read “Why RAG sucks?” <span aria-hidden="true">↗</span></a>
+                                <span class="project__no-link">Source — internal, not public</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" id="inference">
+                        <div class="project__rail">
+                            <span class="project__num" aria-hidden="true">02</span>
+                            <span class="project__status">Internal</span>
+                            <span class="project__years">2024 — now</span>
+                        </div>
+                        <div class="project__body">
+                            <p class="kicker">LLM infrastructure / serving</p>
+                            <h2>Inference benchmarks and KV-cache experiments</h2>
+                            <p class="project__deck">Day-to-day work on the layer between the model and the request: which serving framework, which parallelism strategy, and where the memory actually goes.</p>
+
+                            <dl class="project__facts">
+                                <div>
+                                    <dt>Context</dt>
+                                    <dd>Algorithm engineer in the algorithm team at Isoftstone, working on AI infrastructure: serving evaluation, training-platform tooling and applied LLM systems.</dd>
+                                </div>
+                                <div>
+                                    <dt>Problem</dt>
+                                    <dd>Throughput and latency numbers are easy to produce and hard to compare. KV cache, batching, quantization and distributed strategies interact, and a benchmark can silently measure the wrong thing.</dd>
+                                </div>
+                                <div>
+                                    <dt>Approach</dt>
+                                    <dd>Benchmarked vLLM, SGLang and LMDeploy; worked with KV-cache reuse and memory accounting using LMCache and Dynamo; studied DP/TP/PP/EP trade-offs. Separately, extended LlamaFactory with a cross-container data-parallel API to reduce configuration overhead.</dd>
+                                </div>
+                                <div>
+                                    <dt>What was hard</dt>
+                                    <dd>Keeping the comparison honest. Workload shape, prefix reuse, concurrency and output length change the conclusion. The useful output was less a single throughput figure and more a map of which conditions favour which setup.</dd>
+                                </div>
+                                <div>
+                                    <dt>Outcome</dt>
+                                    <dd>Internal serving work, plus three public learning notes on KV cache, GPU architecture and LLM output consistency. No internal metrics or customer details are published.</dd>
+                                </div>
+                            </dl>
+
+                            <div class="project__links">
+                                <a class="arrow-link" href="post.html?id=kv-cache">KV Cache notes <span aria-hidden="true">↗</span></a>
+                                <a class="arrow-link" href="post.html?id=nvidia-gpu">Nvidia GPU notes <span aria-hidden="true">↗</span></a>
+                                <span class="project__no-link">Source — internal, not public</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" id="causal-inference">
+                        <div class="project__rail">
+                            <span class="project__num" aria-hidden="true">03</span>
+                            <span class="project__status project__status--public">Public</span>
+                            <span class="project__years">2023 — 2024</span>
+                        </div>
+                        <div class="project__body">
+                            <p class="kicker">Research / Causal inference</p>
+                            <h2>Alzheimer's biomarker discovery</h2>
+                            <p class="project__deck">A feature-selection project on gene-expression data, and my first real encounter with research-grade ambiguity.</p>
+
+                            <dl class="project__facts">
+                                <div>
+                                    <dt>Context</dt>
+                                    <dd>Project lead at the School of Artificial Intelligence, GUET. The work became a first-author paper at ICAI 2024.</dd>
+                                </div>
+                                <div>
+                                    <dt>Problem</dt>
+                                    <dd>Biomarker discovery from high-dimensional expression data: many candidate features, limited samples, and a strong temptation to trust whichever method produces the cleanest ranking.</dd>
+                                </div>
+                                <div>
+                                    <dt>Approach</dt>
+                                    <dd>Collected data from GEO, then compared MRMR, CFS and causal-inference-based feature selection. The comparison, rather than a single method, was the point.</dd>
+                                </div>
+                                <div>
+                                    <dt>What was hard</dt>
+                                    <dd>Defending the choices. Data processing and feature-selection assumptions change the result, and writing the paper forced every shortcut into the open.</dd>
+                                </div>
+                                <div>
+                                    <dt>Outcome</dt>
+                                    <dd>“Causal Inference-Based Feature Selection Method for Identifying Alzheimer's Disease Biomarker”, ICAI 2024, Springer. Presented at the conference; code is public.</dd>
+                                </div>
+                            </dl>
+
+                            <div class="project__links">
+                                <a class="arrow-link" href="https://link.springer.com/chapter/10.1007/978-981-96-1907-8_10" target="_blank" rel="noopener">Paper ↗</a>
+                                <a class="arrow-link" href="https://github.com/Justin-12138/CI.bio" target="_blank" rel="noopener">GitHub — CI.bio ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" id="agents">
+                        <div class="project__rail">
+                            <span class="project__num" aria-hidden="true">04</span>
+                            <span class="project__status">Internal</span>
+                            <span class="project__years">2024 — 2025</span>
+                        </div>
+                        <div class="project__body">
+                            <p class="kicker">Agents / Applied AI</p>
+                            <h2>Discussion-based multi-agent systems</h2>
+                            <p class="project__deck">Several agents arguing their way to a result, plus a generative step for product imagery.</p>
+
+                            <dl class="project__facts">
+                                <div>
+                                    <dt>Context</dt>
+                                    <dd>Applied AI work in the algorithm team, exploring how agent frameworks behave on tasks that need more than one pass.</dd>
+                                </div>
+                                <div>
+                                    <dt>Problem</dt>
+                                    <dd>A single model call tends to collapse a multi-step task into one answer. Splitting the work into roles can help, but adds orchestration, state and new failure modes.</dd>
+                                </div>
+                                <div>
+                                    <dt>Approach</dt>
+                                    <dd>Built discussion-based multi-agent flows with LangGraph, AutoGen and Google ADK, paired with Nano-Banana-pro for product imagery.</dd>
+                                </div>
+                                <div>
+                                    <dt>What was hard</dt>
+                                    <dd>The model call is the easy part. Hand-offs, shared state and deciding when the conversation is actually finished are where these systems become engineering.</dd>
+                                </div>
+                                <div>
+                                    <dt>Outcome</dt>
+                                    <dd>Internal prototypes. No public repository or client details.</dd>
+                                </div>
+                            </dl>
+
+                            <div class="project__links">
+                                <span class="project__no-link">Source — internal, not public</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" id="brain-slices">
+                        <div class="project__rail">
+                            <span class="project__num" aria-hidden="true">05</span>
+                            <span class="project__status">Coursework</span>
+                            <span class="project__years">2023 — 2024</span>
+                        </div>
+                        <div class="project__body">
+                            <p class="kicker">Computer vision</p>
+                            <h2>Brain slice classification</h2>
+                            <p class="project__deck">A computer-vision course project: the data was images, and the evaluation was not a spreadsheet.</p>
+
+                            <dl class="project__facts">
+                                <div>
+                                    <dt>Context</dt>
+                                    <dd>Computer vision course project, GUET. Project lead.</dd>
+                                </div>
+                                <div>
+                                    <dt>Problem</dt>
+                                    <dd>Classify Alzheimer's disease brain slices into their categories with a convolutional neural network.</dd>
+                                </div>
+                                <div>
+                                    <dt>Approach</dt>
+                                    <dd>A CNN image-classification pipeline: data preparation, training and evaluation.</dd>
+                                </div>
+                                <div>
+                                    <dt>Outcome</dt>
+                                    <dd>Coursework, no public repository. Kept on this page as part of the trail from robotics and vision toward the systems work I do now.</dd>
+                                </div>
+                            </dl>
+
+                            <div class="project__links">
+                                <span class="project__no-link">Source — coursework, not public</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="projects-afterword reveal">
+                    <p class="kicker">What isn't here</p>
+                    <p>Experiments that never became a repo, and work that stays internal. The GitHub profile is the best place to see the rest. This page is the part I can explain.</p>
+                    <a class="arrow-link" href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub — Justin-12138 ↗</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer__top">
+            <div class="footer__id">
+                <p class="kicker">Colophon</p>
+                <p>Field Notes is a personal site by Justin Liu. Set in Fraunces, Newsreader, Instrument Sans and IBM Plex Mono. Built by hand with HTML, CSS and vanilla JavaScript. No frameworks.</p>
+            </div>
+            <div class="footer__elsewhere">
+                <p class="kicker">This site</p>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Notes</a></li>
+                    <li><a href="life.html">Life</a></li>
+                    <li><a href="now.html">Now</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <p class="kicker">Elsewhere</p>
+                <ul class="footer__external">
+                    <li><a href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub ↗</a></li>
+                    <li><a href="https://www.linkedin.com/in/justinliu12138/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                </ul>
+                <a class="footer__email" href="mailto:justinliu707@gmail.com">justinliu707@gmail.com</a>
+                <p>Guangzhou, China · 23°N</p>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span id="year">2026</span> Justin Liu</span>
+            <span>Field Notes · Guangzhou, China</span>
+            <a href="#top">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "updated": "2026-11-21",
+  "intro": "What I'm working on, learning, and doing when I'm not at a keyboard. Hand-edited, not pulled from a feed.",
+  "home": [
+    {
+      "label": "Building",
+      "text": "AI applications and LLM infrastructure."
+    },
+    {
+      "label": "Learning",
+      "text": "English, and more of the systems underneath."
+    },
+    {
+      "label": "Practicing",
+      "text": "Skateboarding — currently the Ollie and Kickflip."
+    },
+    {
+      "label": "Exploring",
+      "text": "Retrieval, multimodal documents, and new places."
+    }
+  ],
+  "sections": [
+    {
+      "id": "working",
+      "title": "Working on",
+      "body": "LLM infrastructure and applied AI: serving benchmarks, KV-cache reuse, retrieval and document QA. Most days are a mix of reading source, running experiments, and figuring out why the clean demo stopped holding up.",
+      "note": "Current focus — inference · retrieval · document intelligence"
+    },
+    {
+      "id": "exploring",
+      "title": "Exploring",
+      "body": "Multimodal document parsing with VLMs and OCR, agentic retrieval, and the systems layer below inference. I'm usually more interested in the failure modes than in the launch post.",
+      "note": "Recent tabs — vLLM · SGLang · VLM parsing · agent frameworks"
+    },
+    {
+      "id": "learning",
+      "title": "Learning",
+      "body": "English, especially speaking and listening for real conversations rather than only reading documentation. Under that, I keep going deeper into Linux, GPU behaviour and distributed serving.",
+      "note": "Practice — say it out loud, even when it is imperfect"
+    },
+    {
+      "id": "reading",
+      "title": "Reading",
+      "body": "Source code, documentation and papers. There is no reading list to perform; right now it is serving frameworks, retrieval papers, and whatever rabbit hole the week offers.",
+      "note": "On the desk — vLLM / SGLang source, HF model cards, retrieval papers"
+    },
+    {
+      "id": "outside",
+      "title": "Outside work",
+      "body": "Skateboarding, travel when I can, and the ordinary days that stay offline.",
+      "note": "Currently practicing — Ollie · Kickflip"
+    }
+  ],
+  "recent": [
+    {
+      "date": "2026-11-21",
+      "kind": "Site",
+      "title": "A new shell for the site",
+      "text": "Rebuilt the personal site as a field notebook, with proper About, Projects and Life pages.",
+      "href": "about.html"
+    },
+    {
+      "date": "2026-06-30",
+      "kind": "Note",
+      "title": "Why RAG sucks?",
+      "text": "A long note on retrieval, document trees, evidence sufficiency and all the places a RAG pipeline quietly loses the answer.",
+      "href": "post.html?id=rag_sucks"
+    },
+    {
+      "date": "2026-05-02",
+      "kind": "Note",
+      "title": "KV Cache 原理与量化详解",
+      "text": "How KV cache actually behaves, how to size it, and what quantization does to memory and speed.",
+      "href": "post.html?id=kv-cache"
+    },
+    {
+      "date": "2026-01-04",
+      "kind": "Note",
+      "title": "Nvidia GPU 学习笔记",
+      "text": "Architecture, the numbers on the spec sheet, and inter-GPU communication.",
+      "href": "post.html?id=nvidia-gpu"
+    }
+  ]
+}

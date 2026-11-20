@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life — Justin Liu</title>
+    <meta name="description" content="The non-technical side of Justin Liu: skateboarding, learning English, travel, and the ordinary days in between.">
+    <meta name="theme-color" content="#f2ecdf" id="themeColor">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('jl-theme') || localStorage.getItem('theme');
+                var dark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (dark) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    var meta = document.querySelector('meta[name="theme-color"]');
+                    if (meta) meta.setAttribute('content', '#16120e');
+                }
+            } catch (error) { /* theme is optional */ }
+            document.documentElement.classList.add('js');
+            window.setTimeout(function () {
+                if (!window.__jlReady) document.documentElement.classList.remove('js');
+            }, 3000);
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&amp;family=Noto+Sans+SC:wght@400;500&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top" class="page page--life">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="topline">
+        <div class="topline__inner">
+            <span>Field Notes — Life</span>
+            <span class="topline__mid">AI Engineer · Guangzhou, China</span>
+            <span class="topline__time">Local <time id="localTime">--:--</time> / GMT+8</span>
+        </div>
+    </div>
+
+    <header class="masthead">
+        <div class="masthead__inner">
+            <a class="wordmark" href="index.html" aria-label="Justin Liu, home">
+                <span class="wordmark__name">Justin Liu</span>
+                <span class="wordmark__tag">A personal notebook</span>
+            </a>
+
+            <nav class="site-nav" id="siteNav" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="blog.html">Notes</a>
+                <a href="life.html" aria-current="page">Life</a>
+                <a href="now.html">Now</a>
+                <a href="cv.html">CV</a>
+            </nav>
+
+            <div class="masthead__actions">
+                <a class="masthead__link" href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night edition" aria-pressed="false">
+                    <span class="theme-toggle__dot" aria-hidden="true"></span>
+                    <span data-theme-label>Night</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+                    <span class="menu-toggle__label" data-menu-label>Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <header class="page-hero">
+            <div class="wrap page-hero__inner">
+                <div>
+                    <p class="kicker">Life — the non-technical side</p>
+                    <h1 class="page-hero__title">Life, outside<br><em>the repo.</em></h1>
+                </div>
+                <div class="page-hero__aside">
+                    <p class="page-hero__deck">Skateboarding, English, travel, and the ordinary days in between. Not a personal brand — just a place for the rest of the week.</p>
+                    <p class="meta-line">Updated — <span data-life-updated>November 2026</span><br>Short entries, added by hand.</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="life-intro" aria-label="Introduction to the life page">
+            <div class="wrap life-intro__grid">
+                <p class="life-statement">I spend my working hours inside inference engines, retrieval pipelines and benchmark tables. This is where the other hours go.</p>
+                <div class="life-intro__aside">
+                    <p>Some of it is practice. Some of it is travel. Some of it is just a note that doesn't belong in a technical journal.</p>
+                    <p class="meta-line">Currently — Guangzhou / sometimes elsewhere</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="life-section" id="threads" aria-labelledby="threads-title">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <div>
+                        <p class="kicker">01 / Standing threads</p>
+                        <h2 class="section-title" id="threads-title">What I keep<br>coming back to.</h2>
+                    </div>
+                    <p class="section-head__copy">Not achievements. Ongoing things, with the progress still visible.</p>
+                </header>
+
+                <div class="life-threads">
+                    <article class="life-thread life-thread--skate reveal">
+                        <figure class="photo photo--tall life-thread__photo">
+                            <!-- PHOTO SLOT: replace with a real skate photograph. Keep a 4:5 crop. -->
+                            <img src="assets/poster-skate.svg" width="800" height="1000" alt="Abstract screen-printed skate poster with a board and ramp in charcoal and cream." loading="lazy">
+                            <figcaption><span>Fig. 01</span> Poster for now. Real photograph eventually.</figcaption>
+                        </figure>
+                        <div class="life-thread__body">
+                            <span class="life-thread__num" aria-hidden="true">i.</span>
+                            <h3>Skateboarding</h3>
+                            <p>The part of the week with no benchmark. I'm working on the Ollie and the Kickflip. I like the culture, and the fact that progress is impossible to fake. You either land it or you don't.</p>
+                            <p class="life-thread__status">Currently practicing — Ollie / Kickflip</p>
+                        </div>
+                    </article>
+
+                    <article class="life-thread life-thread--english reveal">
+                        <div class="life-thread__body">
+                            <span class="life-thread__num" aria-hidden="true">ii.</span>
+                            <h3>English, out loud</h3>
+                            <p>English is the long game. I can read documentation all day, but saying the same thought out loud to another person is harder. I'm working on speaking and listening for real conversations, not just exams. IELTS is somewhere ahead, not a deadline yet.</p>
+                            <p class="life-thread__status">Working on — speaking &amp; listening</p>
+                        </div>
+                        <figure class="photo photo--wide life-thread__photo">
+                            <!-- PHOTO SLOT: replace with a real photograph from a study session or a trip. -->
+                            <img src="assets/poster-learning.svg" width="1000" height="750" alt="Abstract screen-printed language poster in olive, cream and ochre." loading="lazy">
+                            <figcaption><span>Fig. 02</span> Say it again, slower.</figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="life-thread life-thread--travel reveal">
+                        <figure class="photo photo--landscape life-thread__photo">
+                            <!-- PHOTO SLOT: replace with a landscape or travel photograph you are happy to publish. -->
+                            <img src="assets/poster-life.svg" width="1200" height="800" alt="Abstract screen-printed landscape in dusty blue, cream and rust." loading="lazy">
+                            <figcaption><span>Fig. 03</span> Somewhere worth remembering.</figcaption>
+                        </figure>
+                        <div class="life-thread__body">
+                            <span class="life-thread__num" aria-hidden="true">iii.</span>
+                            <h3>Going somewhere</h3>
+                            <p>I like new places, natural scenery and watching how other people live. The photographs that appear here will be few and chosen.</p>
+                            <p class="life-thread__status">When possible — somewhere new</p>
+                        </div>
+                    </article>
+
+                    <article class="life-thread life-thread--rabbitholes reveal">
+                        <div class="life-thread__body">
+                            <span class="life-thread__num" aria-hidden="true">iv.</span>
+                            <h3>Following rabbit holes</h3>
+                            <p>AI research, open-source repositories, model releases. I read GitHub, Hugging Face and papers, and try the thing myself rather than trusting the announcement. This overlaps with work, but it's also what I do for fun.</p>
+                            <p class="life-thread__status">Currently — too many tabs</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="life-section life-section--log" id="log" aria-labelledby="log-title">
+            <div class="wrap life-log-grid">
+                <aside class="life-log__rail reveal">
+                    <p class="kicker">02 / Field log</p>
+                    <h2 class="section-title" id="log-title">Short notes,<br>not essays.</h2>
+                    <p class="rail-copy">A trick, a trip, a sentence that finally came out right. Entries are added by hand in <code>data/life.json</code>.</p>
+                    <p class="meta-line">Last updated — <span data-life-updated>November 2026</span></p>
+                    <a class="arrow-link" href="now.html">The current snapshot <span aria-hidden="true">↗</span></a>
+                </aside>
+
+                <div class="life-log__body">
+                    <div class="life-log" id="lifeLog">
+                        <p class="loading-line">Loading the field log…</p>
+                    </div>
+                    <noscript>
+                        <p class="loading-line">The field log is rendered by JavaScript. The entries live in <a href="data/life.json"><code>data/life.json</code></a>.</p>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
+        <aside class="life-privacy">
+            <div class="wrap life-privacy__inner">
+                <p class="kicker">A small note on privacy</p>
+                <p>This is not a daily diary. No streaks, no quantified self. Photographs of other people stay private unless they have agreed otherwise. The quiet parts of life can stay quiet.</p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap footer__top">
+            <div class="footer__id">
+                <p class="kicker">Colophon</p>
+                <p>Field Notes is a personal site by Justin Liu. Set in Fraunces, Newsreader, Instrument Sans and IBM Plex Mono. Built by hand with HTML, CSS and vanilla JavaScript. No frameworks.</p>
+            </div>
+            <div class="footer__elsewhere">
+                <p class="kicker">This site</p>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Notes</a></li>
+                    <li><a href="life.html">Life</a></li>
+                    <li><a href="now.html">Now</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <p class="kicker">Elsewhere</p>
+                <ul class="footer__external">
+                    <li><a href="https://github.com/Justin-12138" target="_blank" rel="noopener">GitHub ↗</a></li>
+                    <li><a href="https://www.linkedin.com/in/justinliu12138/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                </ul>
+                <a class="footer__email" href="mailto:justinliu707@gmail.com">justinliu707@gmail.com</a>
+                <p>Guangzhou, China · 23°N</p>
+            </div>
+        </div>
+        <div class="wrap footer__bottom">
+            <span>© <span id="year">2026</span> Justin Liu</span>
+            <span>Field Notes · Guangzhou, China</span>
+            <a href="#top">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

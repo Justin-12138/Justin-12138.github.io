@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" role="img" aria-labelledby="title">
+  <title id="title">Abstract language-learning poster in olive, cream and ochre</title>
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.14"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="lines" width="18" height="18" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="9" x2="18" y2="9" stroke="#171411" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="750" fill="#4f5b48"/>
+  <rect x="30" y="30" width="940" height="690" fill="none" stroke="#e9e0cf" stroke-width="1.5"/>
+
+  <circle cx="760" cy="200" r="132" fill="#c9a227"/>
+  <path d="M132 130 h96 v96 h-70 l-26 26 z" fill="#e9e0cf"/>
+  <path d="M252 198 h96 v96 h-70 l-26 26 z" fill="none" stroke="#e9e0cf" stroke-width="2"/>
+
+  <text x="76" y="112" fill="#e9e0cf" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="15" letter-spacing="3">FIELD NOTES / 03</text>
+  <text x="924" y="112" fill="#e9e0cf" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="15" letter-spacing="3" text-anchor="end">LEARN</text>
+
+  <text x="70" y="388" fill="#e9e0cf" font-family="Georgia, 'Times New Roman', serif" font-size="152" font-weight="700" letter-spacing="-7">SAY IT</text>
+  <text x="74" y="506" fill="#c9a227" font-family="Georgia, 'Times New Roman', serif" font-size="128" font-style="italic" letter-spacing="-4">again.</text>
+
+  <g stroke="#e9e0cf" stroke-width="2" fill="none" opacity=".9">
+    <path d="M76 584 q18 -22 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0"/>
+    <path d="M76 614 q18 -30 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0 t36 0" opacity=".55"/>
+  </g>
+
+  <rect x="76" y="660" width="460" height="20" fill="url(#lines)" opacity=".6"/>
+  <text x="924" y="674" fill="#e9e0cf" font-family="'IBM Plex Mono', 'Courier New', monospace" font-size="13" letter-spacing="3" text-anchor="end">LISTEN / SPEAK / REPEAT</text>
+
+  <rect width="1000" height="750" filter="url(#grain)" opacity=".5"/>
+</svg>

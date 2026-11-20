@@ -1617,6 +1617,70 @@
         });
     }
 
+    function initPhotoGalleries() {
+        var root = $('#photoGroups');
+        if (!root) return;
+
+        fetchData('data/photos.json').then(function (data) {
+            var groups = Array.isArray(data.groups) ? data.groups : [];
+            var figureNumber = parseInt(data.start, 10);
+            if (isNaN(figureNumber) || figureNumber < 1) figureNumber = 1;
+
+            var html = '';
+
+            groups.forEach(function (group) {
+                var photos = Array.isArray(group.photos) ? group.photos : [];
+                if (!photos.length) return;
+
+                var figures = photos.map(function (photo) {
+                    if (!photo || !photo.src) return '';
+
+                    var source = safeUrl(photo.src);
+                    var width = parseInt(photo.width, 10);
+                    var height = parseInt(photo.height, 10);
+                    var dimensions = width > 0 && height > 0
+                        ? ' width="' + width + '" height="' + height + '"'
+                        : '';
+                    var caption = photo.caption
+                        ? '<figcaption><span>Fig. ' + String(figureNumber).padStart(2, '0') + '</span> ' + escapeHtml(photo.caption) + '</figcaption>'
+                        : '';
+
+                    figureNumber += 1;
+
+                    return '<figure class="photo photo-wall__item reveal">' +
+                        '<img src="' + escapeHtml(source) + '" alt="' + escapeHtml(photo.alt || photo.caption || 'Photograph') + '"' + dimensions + ' loading="lazy" decoding="async">' +
+                        caption +
+                    '</figure>';
+                }).join('');
+
+                if (!figures) return;
+
+                html += '<div class="photo-group">' +
+                    '<div class="photo-group__head reveal">' +
+                        '<p class="kicker kicker--plain">' + escapeHtml(group.title || 'Photographs') + '</p>' +
+                        (group.note ? '<p>' + escapeHtml(group.note) + '</p>' : '') +
+                    '</div>' +
+                    '<div class="photo-wall">' + figures + '</div>' +
+                '</div>';
+            });
+
+            if (!html) {
+                root.innerHTML = '<p class="loading-line">No photographs yet. Add them in <code>data/photos.json</code>.</p>';
+                return;
+            }
+
+            root.innerHTML = html;
+            initReveals(root);
+        }).catch(function (error) {
+            root.innerHTML = '<div class="empty-state">' +
+                '<p class="kicker">The photographs did not load</p>' +
+                '<h2>Off the grid, temporarily.</h2>' +
+                '<p>Check that the site is being served over HTTP, then reload. The list lives in <a href="data/photos.json">data/photos.json</a>.</p>' +
+            '</div>';
+            if (window.console && console.warn) console.warn('Photo galleries:', error);
+        });
+    }
+
     /* ----------------------------------------------------------------------
        CV
        ---------------------------------------------------------------------- */
@@ -1692,6 +1756,7 @@
         initHomeNow();
         initNowPage();
         initLifeLog();
+        initPhotoGalleries();
         initCV();
         window.__jlReady = true;
     }

@@ -54,6 +54,13 @@
   "recent": [
     {
       "date": "2026-11-21",
+      "kind": "Photographs",
+      "title": "Some frames from the coast and Chongqing",
+      "text": "Added travel photographs and a few of us to the Life page.",
+      "href": "life.html#photographs"
+    },
+    {
+      "date": "2026-11-21",
       "kind": "Site",
       "title": "A new shell for the site",
       "text": "Rebuilt the personal site as a field notebook, with proper About, Projects and Life pages.",

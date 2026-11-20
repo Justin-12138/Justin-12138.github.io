@@ -356,7 +356,8 @@ html:not(.js) .cv-actions,
 html:not(.js) [data-now-loading],
 html:not(.js) #nowSections,
 html:not(.js) #nowRecent,
-html:not(.js) #lifeLog {
+html:not(.js) #lifeLog,
+html:not(.js) #photoGroups {
     display: none;
 }
 
@@ -1029,6 +1030,11 @@ html:not(.js) #lifeLog {
 
 .photo--wide img {
     aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.photo--portrait img {
+    aspect-ratio: 3 / 4;
     object-fit: cover;
 }
 
@@ -3075,6 +3081,50 @@ html:not(.js) #lifeLog {
     padding-top: 0;
 }
 
+.photo-group + .photo-group {
+    margin-top: clamp(4rem, 8vw, 8rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--rule);
+}
+
+.photo-group__head {
+    display: grid;
+    grid-template-columns: minmax(9rem, 2fr) minmax(0, 5fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: end;
+    margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.photo-group__head p + p {
+    max-width: 46ch;
+    font-family: var(--font-body);
+    font-size: 1.04rem;
+    line-height: 1.6;
+    color: var(--ink-3);
+}
+
+.photo-groups {
+    max-width: 62rem;
+    margin-inline: auto;
+}
+
+.photo-wall {
+    column-width: 16rem;
+    column-gap: clamp(0.9rem, 1.6vw, 1.4rem);
+}
+
+.photo-wall__item {
+    display: block;
+    width: 100%;
+    margin: 0 0 clamp(1rem, 1.8vw, 1.5rem);
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.photo-wall__item:last-child {
+    margin-bottom: 0;
+}
+
 .life-section--log {
     background: var(--paper-deep);
 }
@@ -3735,6 +3785,11 @@ html:not(.js) #lifeLog {
 
     .life-thread--english {
         max-width: 36rem;
+    }
+
+    .photo-group__head {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
     }
 
     .life-intro__aside {

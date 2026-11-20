@@ -1,0 +1,73 @@
+{
+  "start": 4,
+  "groups": [
+    {
+      "title": "Coast & city",
+      "note": "Coast, city, and one hotpot.",
+      "photos": [
+        {
+          "src": "assets/travel/TH1.jpg",
+          "alt": "Justin standing barefoot on a beach at sunset in a blue floral shirt.",
+          "caption": "The coast, before the light went.",
+          "width": 4966,
+          "height": 6622
+        },
+        {
+          "src": "assets/travel/TH2.jpg",
+          "alt": "Justin by the sea in sunglasses and a blue floral shirt, holding a cold drink.",
+          "caption": "Salt, sun, and a cold drink.",
+          "width": 3024,
+          "height": 4032
+        },
+        {
+          "src": "assets/travel/TH3.jpg",
+          "alt": "A colourful parasail drifting above the sea at sunset, with people silhouetted on the beach below.",
+          "caption": "Someone else's parasail.",
+          "width": 3840,
+          "height": 2160
+        },
+        {
+          "src": "assets/travel/CHONGQING1.jpg",
+          "alt": "A person standing on rocks, looking across the river at the illuminated Chongqing skyline at night.",
+          "caption": "Chongqing, after dark.",
+          "width": 1440,
+          "height": 2571
+        },
+        {
+          "src": "assets/travel/CHONGQING2.jpg",
+          "alt": "An overhead view of a Chongqing hotpot with sliced meat, lotus root, mushrooms and other plates.",
+          "caption": "The reason to go to Chongqing.",
+          "width": 3024,
+          "height": 4032
+        }
+      ]
+    },
+    {
+      "title": "Us, mostly",
+      "note": "The person I travel with. A few frames; everything else stays ours.",
+      "photos": [
+        {
+          "src": "assets/girlfrient/girlfriend1.jpg",
+          "alt": "Justin and his girlfriend holding a small cake with a lit candle.",
+          "caption": "A candle, a small cake.",
+          "width": 4284,
+          "height": 5712
+        },
+        {
+          "src": "assets/girlfrient/girlfriend2.jpg",
+          "alt": "A view from above of a person in a fluffy hood walking along a city pavement at night.",
+          "caption": "The walk home.",
+          "width": 4284,
+          "height": 5712
+        },
+        {
+          "src": "assets/girlfrient/girlfriend3.png",
+          "alt": "Justin and his girlfriend sitting on the grass in black-and-white outfits.",
+          "caption": "Dressed up, sitting in the grass.",
+          "width": 4032,
+          "height": 3024
+        }
+      ]
+    }
+  ]
+}
